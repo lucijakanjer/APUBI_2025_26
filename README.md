@@ -107,7 +107,7 @@ RStudio je dostupan za preuzimanje na Posit web stranici:
 
 ## RStudio - sučelje
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/Rstudio_panels)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/Rstudio_panels.png)
 
 ## RStudio - sučelje
 
