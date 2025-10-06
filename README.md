@@ -10,12 +10,7 @@ dr. sc. Lucija Kanjer, e-mail: <lucija.kanjer@biol.pmf.hr>
 - prijavite se sa svojim AAIEDU identitetom
 - ispunite kratku anketu
 
-<figure>
-<img
-src="https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/anketa.png"
-alt="anketa" />
-<figcaption aria-hidden="true">anketa</figcaption>
-</figure>
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/anketa.png)
 
 ## Teme praktikuma
 
@@ -30,7 +25,7 @@ alt="anketa" />
 
 ## Raspored po tjednima
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/raspored.jpg" width="800" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/raspored.jpg)
 
 ## Sadržaj današnje vježbe
 
@@ -81,7 +76,7 @@ alt="anketa" />
 - Strma krivulja učenja.
 - Manje intuitivno sučelje.
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/mane.png" width="800" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/mane.jpg)
 
 ## Što nam treba za rad?
 
@@ -100,7 +95,7 @@ drugi programi kao što su VS Code ili Positron
 R se može preuzeti sa CRAN-a (Comprehensive R archive network)
 <https://cran.r-project.org/>
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/Installation1.png" width="900" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/Installation1.png)
 
 ## Instalacija RStudio-a
 
@@ -108,11 +103,11 @@ RStudio je dostupan za preuzimanje na Posit web stranici:
 
 - <https://posit.co/download/rstudio-desktop/>
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/Installation2.png" width="900" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/Installation2.png)
 
 ## RStudio - sučelje
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/Rstudio_panels.png" width="900" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/Rstudio_panels)
 
 ## RStudio - sučelje
 
@@ -130,14 +125,6 @@ RStudio je dostupan za preuzimanje na Posit web stranici:
   prikažu tražene informacije o paketima i naredbama; **files** -
   vizualizacija trenutnog radnog direktorija (nije za postavljanje novog
   radnog direktorije).
-
-## Materijali
-
-- Materijali vježbi dostupni na GitHub repozitoriju **“APUBI_2026_26”**
-  na linku:
-- <https://github.com/lucijakanjer/APUBI_2025_26>
-
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/github.jpg" width="800" />
 
 ## Rad u R-u i RStudio-u
 
@@ -413,7 +400,7 @@ print(df_mikrobi) # ispis u konzoli
 View(df_mikrobi) # vizualizacija tablice u novom listu
 ```
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/df_mikrobi.png" width="800" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/df_mikrobi.png)
 
 ## Rad s datotakama
 
@@ -442,7 +429,7 @@ setwd("C:/Users/lucij/Documents/APUBI/01_Uvod/zivotinje") # moj laptop
 - *Files* -\> ući u mapu koju želimo postaviti kao radni direktorij -\>
   *More* -\> *Set As Working Directory*
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/setwd.jpg" width="600" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/setwd.jpg)
 
 ## Traženje pomoći
 
@@ -507,7 +494,7 @@ head(zivotinje) # prikaz "glave" tablice
 View(zivotinje) # prikaz u novom tabu pored skripte
 ```
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/zivotinje.png" width="800" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/zivotinje.png)
 
 ## Paketi
 
@@ -574,7 +561,7 @@ How To R: Getting Started with R and RStudio
 
 <https://www.youtube.com/watch?v=lVKMsaWju8w>
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/yt.jpg" width="700" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/yt.jpg)
 
 ## Samostalni zadaci
 
@@ -597,4 +584,4 @@ Otvorite poveznicu: <https://forms.office.com/e/cG5bh8WvPk>
 
 ili **skenirajte QR kod** i ispunite kratki kviz danas naučenoga!
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/kviz.png" width="700" />
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/kviz.png)
