@@ -10,7 +10,12 @@ dr. sc. Lucija Kanjer, e-mail: <lucija.kanjer@biol.pmf.hr>
 - prijavite se sa svojim AAIEDU identitetom
 - ispunite kratku anketu
 
-<img src="C:/Users/lucij/Documents/APUBI/01_Uvod/slike/anketa.png" width="700" />
+<figure>
+<img
+src="https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/anketa.png"
+alt="anketa" />
+<figcaption aria-hidden="true">anketa</figcaption>
+</figure>
 
 ## Teme praktikuma
 
