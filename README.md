@@ -76,7 +76,7 @@ dr. sc. Lucija Kanjer, e-mail: <lucija.kanjer@biol.pmf.hr>
 - Strma krivulja učenja.
 - Manje intuitivno sučelje.
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/mane.jpg)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/slike/mane.png)
 
 ## Što nam treba za rad?
 
