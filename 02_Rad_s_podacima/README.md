@@ -422,6 +422,9 @@ head(kornjace_selected)
   - **Fleksibilnost** - Moguće kombinirati više uvjeta korištenjem
     logičkih operatora (&, \|).
 
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/filter.png)
+Slika preuzeta s: <https://allisonhorst.com/r-packages-functions>
+
 ``` r
 kornjace_blue <- filter(kornjace_selected, # podaci
                           rescue_centre == "Blue World Institute") # uvjet filtriranja
@@ -461,6 +464,9 @@ print(kornjace_blue)
 - koristit ćemo funkciju **<code>mutate()</code>** kako bi kreirali novu
   varijablu koja prikazuje masu pingvina u kilogramima umjesto u
   gramima.
+
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/mutate.png)
+Slika preuzeta s: <https://allisonhorst.com/r-packages-functions>
 
 ``` r
 kornjace_length_mm <- mutate(kornjace_blue, # podaci
@@ -694,6 +700,12 @@ print(kornjace_result_pipe_2)
     ## 6 Medulin                  26  
     ## 7 Porer island             45.2
     ## 8 Zadar                    62
+
+## Dodatni izvori
+
+- <https://openscapes.org/blog/2020-10-12-tidy-data/>
+- <https://www.datacamp.com/tutorial/factors-in-r>
+- <https://r4ds.had.co.nz/factors.html>
 
 ## Kviz za ponavljanje
 
