@@ -54,13 +54,13 @@ kornjača. Iz uzorka mikrobioma izolirana je ukupna DNA te izmjerena
 njena koncentracija. Više o projektu možete vidjeti na linku:
 <https://www.turtlebiome.biol.pmf.hr/>
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/kornjace_photo.jpg)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/kornjace_photo.jpg)
 
 ## *Untidy* tablica
 
 - Otvorite datoteku “kornjace_untidy.xlsx”
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/kornjace_untidy.jpg)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/kornjace_untidy.jpg)
 
 ## Sredite tablicu u *tidy* format!
 
@@ -72,7 +72,7 @@ njena koncentracija. Više o projektu možete vidjeti na linku:
 biti tako! Ako np. uzorkujemo jedinku više puta, onda svako uzorkovanje
 = 1 opažanje i predstavlja 1 redak u tablici.
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/tidy_rules.jpg)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/tidy_rules.jpg)
 
 ## Najčešće greške
 
@@ -97,13 +97,13 @@ biti tako! Ako np. uzorkujemo jedinku više puta, onda svako uzorkovanje
 
 ## Rezultat - *tidy* tablica kornjača!
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/kornjace_tidy.jpg)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/kornjace_tidy.jpg)
 
 ## Rad s podacima u R-u
 
 ### Tidyverse skup paketa
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/tidyverse.png)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/tidyverse.png)
 
 - **Tidyverse** je skup međusobno povezanih R paketa osmišljenih za
   olakšavanje **rada s podacima**.
@@ -118,7 +118,7 @@ biti tako! Ako np. uzorkujemo jedinku više puta, onda svako uzorkovanje
 
 ### Osnovni paketi u Tidyverse-u
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/tidyverse_packages.png)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/tidyverse_packages.png)
 
 - **ggplot2** – Napredna i fleksibilna vizualizacija podataka.
 - **dplyr** – Efikasna manipulacija podacima (filtriranje, sortiranje,
@@ -162,7 +162,7 @@ kornjace <- read_excel("kornjace_tidy.xlsx")
 View(kornjace) # ili klik na objekt u environmentu
 ```
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/kornjace_view.jpg)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/kornjace_view.jpg)
 
 ``` r
 # Pregled prvih redaka podataka
@@ -702,4 +702,4 @@ Link na kviz:
 
 Ili:
 
-![](https://github.com/lucijakanjer/APUBI_2025_26/tree/main/02_Rad_s_podacima/slike/kviz_vj2.png)
+![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/kviz_vj2.png)
