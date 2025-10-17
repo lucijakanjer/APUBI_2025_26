@@ -1,9 +1,9 @@
-# Analize podataka u biološkim istraživanjima - praktikum 2024
+# Analize podataka u biološkim istraživanjima - praktikum 2025/26
 # Lucija Kanjer lucija.kanjer@biol.pmf.hr
 
 ##############################################################
 
-# 3. Rad s podacima i objektima
+# 2. Rad s podacima i objektima
 
 # Uključene su sve korištenje naredbe, ALI NEKE SU NEPOTPUNE ILI SADRŽE NAMJERNE POGREŠKE:
 # Dovršite naredbe i također dodajte komentare za sebe (koristite # za komentiranje)
@@ -36,6 +36,30 @@ tail(kornjace)
 # Tipovi podataka - provjera strukture
 str(kornjace)
 
+### Izvlačenje pojedinačnih stupaca i redaka iz data frame-a
+
+# Izvlačenje stupaca (varijabli) u vektor
+dob_kornjaca <- kornjace$age  #data.frame$stupac
+print(dob_kornjaca)
+class(dob_kornjaca)
+
+# Izvlačenje stupaca (varijabli) u data frame
+ime_kornjaca <- kornjace[,3]
+print(ime_kornjaca)
+class(ime_kornjaca)
+
+# Izvlačenje redaka (opažanja) u data frame
+kornjaca_S1 <- kornjace[1, ] # data.frame[redak, stupac]
+print(kornjaca_S1)
+
+# Izdvajanje pojedinačne vrijednosti - primjer:  ime kornjače  koja ima sample_ID S5!
+ime_S5 <- kornjace$turtle_name[kornjace$sample_ID == "S5"]
+
+# Zadatak: Izdvojite lokaciju kornjača kao vektor u poseban objekt!
+
+# Zadatak: Izvucite podatak o lokaciji kornjače koja se zove Valbiska!
+
+
 ### FAKTORI
 
 # Nominalne kategoričke varijable - nominalni faktori
@@ -63,15 +87,8 @@ ime_kornjaca <- kornjace[,3]
 print(ime_kornjaca)
 class(ime_kornjaca)
 
-# Koja je razlika između ova dva načina izvlačenja stupaca?
+# Zadatak: Pretvorite ostale kategoričke varijable u faktore odgovarajućeg tipa!
 
-
-# Redak predstavlja uzorke
-kornjaca_S1 <- kornjace[1, ] # data.frame[redak, stupac]
-print(kornjaca_S1)
-
-# Izdvojite lokaciju kornjača kao vektor u poseban objekt!
-# Pokušajte na isti način izdvojiti pojedinačnu vrijednost imena kornjače S5!
 
 ################################################################################
 

@@ -616,11 +616,11 @@ mm za adultne kornjače.
 # Rješenje
 # Korak 1: Selektiranje relevantnih varijabli
 kornjace_selected_2 <- select(kornjace, length_cm, rescue_centre, location)
-# # Korak 2: Filtriranje uzoraka (redaka) vrste "Gentoo"
+# # Korak 2: Filtriranje uzoraka (redaka)
 kornjace_aquarium <- filter(kornjace_selected_2, rescue_centre == "Aquarium Pula")
 #Korak 3: Uklanjanje nedostajućih vrijednosti
 kornjace_cleaned_2 <- na.omit(kornjace_aquarium)
-# Korak 4: Zadavanje grupiranja i prikaza rezultata po spolu
+# Korak 4: Zadavanje grupiranja i prikaza rezultata po lokaciji
 kornjace_grouped_2 <- group_by(kornjace_cleaned_2, location)
 # Korak 5: Kreiranje finalne sumariziranje tablice rezultata
 kornjace_result_2 <- summarise(kornjace_grouped_2, average_length = mean(length_cm))
@@ -710,8 +710,4 @@ print(kornjace_result_pipe_2)
 ## Kviz za ponavljanje
 
 Link na kviz:
-<https://forms.cloud.microsoft/e/9SfYdhmPE6?origin=lprLink>
-
-Ili:
-
-![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/kviz_vj2.png)
+<https://forms.cloud.microsoft/e/1WGLy0ERSh?origin=lprLink>
