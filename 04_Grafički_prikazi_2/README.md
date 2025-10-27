@@ -305,3 +305,5 @@ Pokazuje li boja informaciju ili samo dekoraciju?
 2.  Instalirajte paket RColorBrewer i promjeniti palete boja na
     prijašnjim grafovima. Pazite da grafovi budu kontrasni i
     informativni.
+
+Link na kviz: https://forms.cloud.microsoft/e/NxW29BwC9Y?origin=lprLink
