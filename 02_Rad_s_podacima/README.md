@@ -462,8 +462,7 @@ print(kornjace_blue)
 - Pomaže u dodavanju izmjenjenih varijabli bez potrebe za kreiranjem
   novog data frame-a.
 - koristit ćemo funkciju **<code>mutate()</code>** kako bi kreirali novu
-  varijablu koja prikazuje masu pingvina u kilogramima umjesto u
-  gramima.
+  varijablu koja prikazuje duljinu u milimetrima umjesto u centimetrima.
 
 ![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/02_Rad_s_podacima/slike/mutate.png)
 Slika preuzeta s: <https://allisonhorst.com/r-packages-functions>
@@ -711,3 +710,4 @@ print(kornjace_result_pipe_2)
 
 Link na kviz:
 <https://forms.cloud.microsoft/e/1WGLy0ERSh?origin=lprLink>
+
