@@ -46,7 +46,7 @@ shapiro.test(ribe$starost_riba)
 # Zadaci
 
 # 1.Napravite ispitivanje normalnosti za varijablu "brzina_plivanja". Je li varijabla normalno distribuirana?
-# 2.Napravite ispitivanje normalnosti za varijablu "broj_jaja". Je li varijabla normalno distribuirana? Napravite dokument izvještaja.
+# 2.Napravite ispitivanje normalnosti za varijablu "broj_jaja". Je li varijabla normalno distribuirana?
 
 
 ###############################################################################
@@ -129,5 +129,6 @@ par(mfrow = c(2, 2))
 plot(model_log_kolibe)
 
 summary(model_log_kolibe)
+
 
 
