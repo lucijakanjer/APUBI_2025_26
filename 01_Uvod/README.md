@@ -23,10 +23,6 @@ dr. sc. Lucija Kanjer, e-mail: <lucija.kanjer@biol.pmf.hr>
 - Statistika kategoričkih podataka
 - Multivarijatna statistika
 
-## Raspored po tjednima
-
-![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/01_Uvod/slike/raspored.jpg)
-
 ## Sadržaj današnje vježbe
 
 - Upoznavanje s RStudio sučeljem
@@ -585,3 +581,4 @@ Otvorite poveznicu: <https://forms.office.com/e/cG5bh8WvPk>
 ili **skenirajte QR kod** i ispunite kratki kviz danas naučenoga!
 
 ![](https://github.com/lucijakanjer/APUBI_2025_26/blob/main/01_Uvod/slike/kviz.png)
+
