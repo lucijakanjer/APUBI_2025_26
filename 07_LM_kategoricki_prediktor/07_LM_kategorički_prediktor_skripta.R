@@ -39,12 +39,7 @@ t.test(GeneExpression ~ Exposure, data = amphibians)
 # Zadatak: Postoji li razlika u razini citokina kod vodozemaca pri niskoj i visikoj izloženosti PCBu?
 # Napravite linarni model, interpretirajte ga te provjerite pretpostavke modela!
 
-model_cytokine <- lm(CytokineLevel ~ Exposure, data = amphibians)
-summary(model_cytokine)
-par(mfrow = c(1, 2))
-plot(model_cytokine, which = 1, main = "Provjera homoskedastičnosti reziduala")
-plot(model_cytokine, which = 2, main = "Provjera normalnosti reziduala")
-dev.off()
+# Što napraviti kad homoskedastičnost (jednakost varijanci) reziduala nije zadovoljena?
 
 amphibians$LogCytokineLevel <- log10(amphibians$CytokineLevel+1)
 
@@ -87,4 +82,5 @@ summary()
 # Postoji li razlika u fotosintetskoj učinkovitosti (FvFm) između klijanaca sa i bez predtrtmana te kontrolne skupine?
 # Postoji li razlika u ekspresiji gena DREB2A između klijanaca sa i bez predtrtmana te kontrolne skupine?
 # Postoji li razlika u ekspresiji gena HSFA3 između klijanaca sa i bez predtrtmana te kontrolne skupine?
+
 
