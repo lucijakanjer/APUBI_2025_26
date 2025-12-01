@@ -41,7 +41,7 @@ t.test(GeneExpression ~ Exposure, data = amphibians)
 
 # Što napraviti kad homoskedastičnost (jednakost varijanci) reziduala nije zadovoljena?
 
-amphibians$LogCytokineLevel <- log10(amphibians$CytokineLevel+1)
+amphibians$LogCytokineLevel <- log10(amphibians$CytokineLevel)
 
 model_log_cytokine <- lm(LogCytokineLevel ~ Exposure, data = amphibians)
 summary(model_log_cytokine)
@@ -82,5 +82,6 @@ summary()
 # Postoji li razlika u fotosintetskoj učinkovitosti (FvFm) između klijanaca sa i bez predtrtmana te kontrolne skupine?
 # Postoji li razlika u ekspresiji gena DREB2A između klijanaca sa i bez predtrtmana te kontrolne skupine?
 # Postoji li razlika u ekspresiji gena HSFA3 između klijanaca sa i bez predtrtmana te kontrolne skupine?
+
 
 
