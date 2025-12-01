@@ -70,18 +70,26 @@ fotosinteza
 model_Pi_Abs 
 summary()
 
-plot(model, which = 1, main = "Provjera homoskedastičnosti reziduala")
-plot(model, which = 2, main = "Provjera normalnosti reziduala")
-
 # 2.2 Alternatini način: ANOVA
 anova_Pi_Abs <- aov(Pi_Abs ~ klijanci, data = fotosinteza)
 summary()
 
+# Post-hoc test: između kojih grupa postoji razlika?
+TukeyHSD()
+
+# Provjera pretpostavki
+plot(model, which = 1, main = "Provjera homoskedastičnosti reziduala")
+plot(model, which = 2, main = "Provjera normalnosti reziduala")
+
 # Zadaci
 
-# Postoji li razlika u fotosintetskoj učinkovitosti (FvFm) između klijanaca sa i bez predtrtmana te kontrolne skupine?
-# Postoji li razlika u ekspresiji gena DREB2A između klijanaca sa i bez predtrtmana te kontrolne skupine?
-# Postoji li razlika u ekspresiji gena HSFA3 između klijanaca sa i bez predtrtmana te kontrolne skupine?
+# Napravi vizualizaciju podataka boxplotom i linarni model za svako od pitanja. Postoji li razlika i između kojih grupa?
+# Napravi provjeru pretpostavki normalnosti i homoskedastičnosti!
+
+# 1. Postoji li razlika u fotosintetskoj učinkovitosti (FvFm) između klijanaca sa i bez predtrtmana te kontrolne skupine?
+# 2. Postoji li razlika u ekspresiji gena DREB2A između klijanaca sa i bez predtrtmana te kontrolne skupine?
+# 3. Postoji li razlika u ekspresiji gena HSFA3 između klijanaca sa i bez predtrtmana te kontrolne skupine?
+
 
 
 
