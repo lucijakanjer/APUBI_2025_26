@@ -393,3 +393,9 @@ binom.test(biljke_pokus4$klijanci, biljke_pokus4$broj_sjemenki, p = biljke_pokus
 - Od 15 miševa pod određenom prehranom, njih 10 je pokazalo poboljšanje
   težine.
 - Je li postotak poboljšanja značajno različit od očekivanih 50%?
+
+## Dodatni izvori
+
+- Long vs. Wide Table Format: https://www.statology.org/long-vs-wide-data/
+- Wilcoxon test za uparene uzorke - interpretacija testne statistike: https://numiqo.com/tutorial/wilcoxon-test/
+
