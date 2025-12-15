@@ -2,28 +2,35 @@ Linearni modeli s više prediktora i njihovim interakcijama
 ================
 2025/26
 
-## Sadržaj predavanja
-
 Linearni modeli s 3 tipa interakcija prediktora (nezavisne varijable):
 
 1.  interakcija **2 kontinuirane** varijable
 2.  interakcija **kontinuirane i kategoričke** varijable
 3.  interakcija **2 kategoričke** varijable.
 
-## A) Priprema podataka
-
-Učitavamo gotov primjer podataka koji sadrži informacije o **gubitku
-mase** (loss), **vremenu vježbanja** (hours), **trudu tijekom
-vježbanja** (effort), **spolu** (gender) i programu: plivanje,
-joggiranje i kontrola (prog).
+### Sadržaj vježbe
 
 Primjer je preuzet sa stranice:
 <https://stats.oarc.ucla.edu/r/seminars/interactions-r/>
 
+- **A)** Priprema Podataka
+- **B)** Ponavljanje: LM s 1 kontinuiranim prediktorom
+- **C)** LM s 2 kontinuirana prediktora i njihovom interakcijom
+- **D)** LM s 1 kategoričkim i 1 kantinuiranim prediktorom i njihovom
+  interakcijom
+- **E)** LMs 2 kategorička prediktora i njihovom interakcijom
+
+## A) Priprema podataka
+
+Učitavamo gotov primjer podataka koji sadrži informacije o **gubitku
+mase** (loss), **vremenu vježbanja** (hours), **trudu tijekom
+vježbanja** (effort), **spolu** (gender) i **programu vježbanja**
+(prog): plivanje, joggiranje i kontrola (čitanje).
+
 ``` r
 #a1) učitavanje paketa #
 #install.packages("emmeans")
-library(emmeans)
+library(emmeans) #dodatne statistike i grafovi za linearne modele
 library(ggplot2)
 
 # a2) učitavanje tablice sa web izvora #
@@ -52,6 +59,19 @@ dat$gender <- factor(dat$gender,labels=c("male","female"))
 ``` r
 #b1) linearni model ovisnosti gubitka mase o vremenu vježbanja #
 cont <- lm(loss~hours,data=dat)
+anova(cont)
+```
+
+    ## Analysis of Variance Table
+    ## 
+    ## Response: loss
+    ##            Df Sum Sq Mean Sq F value   Pr(>F)   
+    ## hours       1   1341 1340.94   6.788 0.009329 **
+    ## Residuals 898 177395  197.54                    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
 summary(cont)
 ```
 
@@ -99,6 +119,9 @@ emmip(cont,~hours,at=mylist, CIs=TRUE)
 
 ![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
 
+*Kad se naredba za učitavanje objekta stavi u zagrade, odmah se izvršava
+i ispis novokreiranog objekta.*
+
 ## C) LINEARNI MODEL S 2 KONTINUIRANA PREDIKTORA I NJIHOVOM INTERAKCIJOM
 
 **Pitanje**: Povećava li se gubitak mase s brojem sati vježbanja i
@@ -107,6 +130,21 @@ povećanjem razine truda tijekom vježbanja?
 ``` r
 #c1) linearni model gubitka mase o vremenu i trudu vježbanja #
 contcont <- lm(loss~hours*effort,data=dat)
+anova(contcont)
+```
+
+    ## Analysis of Variance Table
+    ## 
+    ## Response: loss
+    ##               Df Sum Sq Mean Sq F value    Pr(>F)    
+    ## hours          1   1341  1340.9  7.2922  0.007056 ** 
+    ## effort         1  11823 11823.1 64.2957 3.333e-15 ***
+    ## hours:effort   1    809   809.2  4.4008  0.036202 *  
+    ## Residuals    896 164763   183.9                      
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
 summary(contcont)
 ```
 
@@ -183,11 +221,22 @@ levels(dat$gender)#provjera kategorija
 
     ## [1] "male"   "female"
 
-### Priprema za izradu modela ???
+### **Ponovimo**: jednostavni linearni model s 1 kategoričkom varijablom: ovisnost gubitka mase o spolu
 
 ``` r
-#d1) jednostavni model kad je muški spol referentna kategorija
+#d1) ponovimo: jednostavni linearni model s 1 kategoričkom varijablom: ovisnost gubitka mase o spolu
 catm <- lm(loss~gender,data=dat)
+anova(catm)
+```
+
+    ## Analysis of Variance Table
+    ## 
+    ## Response: loss
+    ##            Df Sum Sq Mean Sq F value Pr(>F)
+    ## gender      1      8   7.634  0.0384 0.8448
+    ## Residuals 898 178729 199.030
+
+``` r
 summary(catm)
 ```
 
@@ -211,18 +260,36 @@ summary(catm)
     ## F-statistic: 0.03835 on 1 and 898 DF,  p-value: 0.8448
 
 ``` r
-#d2)promjeni razine kategorija tako da ženski spol bude razina 1 (referentna grupa)
+#d2)promjeni razine kategorija tako da ženski spol referentna grupa
 dat$gender <- relevel(dat$gender, ref="female")
 levels(dat$gender)
 ```
 
     ## [1] "female" "male"
 
+Zadatak: Učitajte ponovo model! Što se promjenilo zamjenom referentne
+kategorije spola?
+
 ### Izrada modela
 
 ``` r
 #d3) izrada modela
 contcat <- lm(loss~hours*gender,data=dat)
+anova(contcat)
+```
+
+    ## Analysis of Variance Table
+    ## 
+    ## Response: loss
+    ##               Df Sum Sq Mean Sq F value   Pr(>F)   
+    ## hours          1   1341 1340.94  6.7793 0.009375 **
+    ## gender         1      3    3.17  0.0160 0.899319   
+    ## hours:gender   1    163  163.20  0.8251 0.363944   
+    ## Residuals    896 177229  197.80                    
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
 summary(contcat)
 ```
 
@@ -296,6 +363,21 @@ dat$gender <- relevel(dat$gender, ref="female")
 ``` r
 #e2) izrada modela
 catcat <- lm(loss~gender*prog,data=dat)
+anova(catcat)
+```
+
+    ## Analysis of Variance Table
+    ## 
+    ## Response: loss
+    ##              Df Sum Sq Mean Sq   F value Pr(>F)    
+    ## gender        1      8       8    0.1796 0.6718    
+    ## prog          2 133277   66639 1568.2493 <2e-16 ***
+    ## gender:prog   2   7463    3732   87.8181 <2e-16 ***
+    ## Residuals   894  37988      42                     
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
 summary(catcat)
 ```
 
@@ -356,8 +438,8 @@ Iščitavamo iz grafa:
 
 - pravci na grafu su samo prikaz interakcije, njihovi smjerovi se ne
   interpretiraju
-- kako bi napravili vizualizaciju koju možemo koristiti u
-  radu/publikaciji, bolje je koristiti stupičasti graf.
+- za alternativnu vizualizaciju koju možemo koristiti u
+  radu/publikaciji, možemo koristiti stupičasti graf.
 
 #### Drugi primjer vizualizacije: stupičasti graf u ggplotu
 
@@ -387,4 +469,31 @@ ggplot(data=catcatdat, aes(x=prog,y=yvar, fill=gender)) + geom_bar(stat="identit
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
-## Zadatak: provjerite pretpostavke normalnosti i homoskedastičnosti modela!
+***Napomena**: za sve linearne modele treba provjeriti da pretpostavke
+normalnosti i homoskedastičnosti reziduala nisu narušene!*
+
+Taj dio je obrađen u Vježbama 6 i 7 te bi se na isti način provjeravao i
+tumačio za ove modele!
+
+## Zadaci
+
+1.  Napravite model gubitka mase u ovisnosti o svim faktorima u tablici,
+    ali bez interakcija. Koje su varijable značajne za gubitak mase? Je
+    li model značajan? Koliko udio varijacije je objašnjen modelom?
+2.  Napravite model gubitka mase u ovisnosti o svim faktorima u tablici
+    i njihovim interakcijama! Koje su varijable značajne za gubitak
+    mase? Je li model značajan? Koliko udio varijacije je objašnjen
+    modelom?
+3.  Napravite model gubitka mase u ovisnosti o svim faktorima u tablici,
+    ali interakcijom faktora “effort” i “hours” te “prog” i “gender”!
+    Koje su varijable značajne za gubitak mase? Je li model značajan?
+    Koliko udio varijacije je objašnjen modelom?
+
+- Koji model najbolje objašnava podatke?
+- Koji model ima najviše odabrati smisla za (biološku) interpretaciju?
+
+## Kviz
+
+<https://forms.cloud.microsoft/e/aUAc0ZVwne>
+
+![](README_files/figure-gfm/kviz.png)<!-- -->
