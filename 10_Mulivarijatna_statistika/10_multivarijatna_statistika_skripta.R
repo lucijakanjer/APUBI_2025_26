@@ -10,14 +10,12 @@
 
 # 1. Instalacija i učitavanje potrebnih paketa
 library(Hmisc) # napredna obrada podataka, korelacija sa p-vrednostima
-library(vegan) # paket za ekološke analize (brojnosti vrsta), PCA
 library(MASS) # diskriminantna analiza
 library(psych) # paket za analize koje se često koriste u psihologiji
-library(cluster) # klaster analize
 library(datasauRus) # paket a primjerima raznih datasetova
 library(ggplot2) 
 library(ggfortify) # za vizualizaciju rezultata statističkih analiza
-library(tidyverse) # iz nekog razloga bitno je ovo učitati zadnje u ovoj vježbi
+library(dplyr) # iz nekog razloga bitno je ovo učitati zadnje u ovoj vježbi
 
 # 2. Učitavanje Iris podataka
 # Podaci irisima već su ugrađeni u svaki R, potrebno ih je samo učitati u environment
@@ -49,10 +47,7 @@ pairs.panels(iris[1:4], gap = 0, pch=21)
 #Simpsonov paradox!
 #problem sa strukturiranim podatcima (i Irisi su takvi)
 
-
-# Kroz datasauRus se ilustrira situacija gdje korelacija na ukupnom nivou ne odražava realne odnose unutar podgrupa
-
-library(datasauRus)
+# Kroz paket datasauRus se ilustrira situacija gdje korelacija na ukupnom nivou ne odražava realne odnose unutar podgrupa
 
 # Pogledajmo sve datasetove iz paketa datasauRus
 ggplot(datasaurus_dozen, aes(x = x, y = y, colour = dataset))+
@@ -63,14 +58,14 @@ ggplot(datasaurus_dozen, aes(x = x, y = y, colour = dataset))+
 
 # Svi datasetovi imaju slične deskriptivne statistike, ali očito mnogo drugačiji izgled!
 
-dino<-datasaurus_dozen # učitavanje svih datasetova u objekt "dino"
-slant<-dino[which(dino$dataset=="slant_down"),] # odabir dataset "slant_down"
+data<-datasaurus_dozen # učitavanje svih datasetova u objekt "data"
+slant<-data[which(data$dataset=="slant_down"),] # odabir dataset "slant_down"
 ggplot(slant, aes(x = x, y = y)) + geom_point() # vizualizacija dataseta "slant_down"
 
 # Izračunajmo ponovo korelaciju i značajnost iz datasaet "slant"
 rcorr(slant$x,slant$y)
 #iako ispada da korelacije nema (p>0.05), izgleda da su podatci strukturirani (više uzoraka)
-#a korelacija unutar tih grupa se čini dost jaka i negativna
+#a korelacija unutar tih grupa se čini dosta jaka i negativna
 
 
 # 4. kovarijanca (bilo ce na predavanju - bitno za PCA)
@@ -91,9 +86,6 @@ summary(pca_res)
 
 # korelacije između izvedenih varijabli - princ. komponenata (PC)
 pairs.panels(pca_res$x)
-
-# scree plot - prikazuje doprinos svake komponente ukupnoj varijanci
-plot(pca_res)
 
 # Vizualizacija PCA
 # PCA scatterplot obojen prema vrstama irisa, s prikazom "loadings" vektora
@@ -177,7 +169,7 @@ autoplot(pca_res, data = iris_km, colour = 'cluster', shape = 'Species',
          loadings = TRUE, loadings.label = TRUE, loadings.label.size = 3)
 
 # Zadatak:
-# Prikažite k-means clustere na LDA grafu uz pomoć interneta.
+# Prikažite k-means clustere na LDA grafu.
 
 
 
