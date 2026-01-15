@@ -566,4 +566,7 @@ autoplot(pca_res, data = iris_km, colour = 'cluster', shape = 'Species',
 
 ## Kviz
 
+https://forms.cloud.microsoft/e/E8UNGzrGTU
+
 ![](README_files/figure-gfm/kviz.png)<!-- -->
+
