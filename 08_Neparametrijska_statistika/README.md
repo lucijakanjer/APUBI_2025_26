@@ -62,7 +62,7 @@ head(biljke_pokus1)
 ``` r
 # Kreiranje tablice u dugačkom (long) formatu - za crtanje plotova
 
-biljke_pokus1$id <- c(1:15) # dodavanje stupca za identifikaciju radaka
+biljke_pokus1$id_retka <- c(1:15) # dodavanje stupca za identifikaciju redaka
 
 biljke_pokus1_long <- pivot_longer(biljke_pokus1, cols = c(kontrola, gnojivo), names_to = "tretman", values_to = "proklijalo")
 
@@ -70,20 +70,32 @@ head(biljke_pokus1_long)
 ```
 
     ## # A tibble: 6 × 3
-    ##      id tretman  proklijalo
-    ##   <int> <chr>         <int>
-    ## 1     1 kontrola          4
-    ## 2     1 gnojivo          19
-    ## 3     2 kontrola          8
-    ## 4     2 gnojivo          10
-    ## 5     3 kontrola          5
-    ## 6     3 gnojivo           8
+    ##   id_retka tretman  proklijalo
+    ##      <int> <chr>         <int>
+    ## 1        1 kontrola          4
+    ## 2        1 gnojivo          19
+    ## 3        2 kontrola          8
+    ## 4        2 gnojivo          10
+    ## 5        3 kontrola          5
+    ## 6        3 gnojivo           8
 
 ### Boxplot
+
+``` r
+# Vizualizacija podataka iz pokusa 1
+ggplot(biljke_pokus1_long, aes(x = tretman, y = proklijalo, fill = tretman)) +
+  geom_boxplot()
+```
 
 ![](README_files/figure-gfm/boxplot_pokus1-1.png)<!-- -->
 
 ### Histogram - Vizualizacija distribucije podataka
+
+``` r
+# Histogrami
+ggplot(biljke_pokus1_long, aes(x = proklijalo, fill = tretman)) +
+  geom_histogram(binwidth = 3, color = "black") + facet_wrap (~ tretman, nrow = 2)
+```
 
 ![](README_files/figure-gfm/hist_pokus1-1.png)<!-- -->
 
@@ -116,14 +128,14 @@ head(biljke_pokus1_wide)
 ```
 
     ## # A tibble: 6 × 3
-    ##      id kontrola gnojivo
-    ##   <int>    <int>   <int>
-    ## 1     1        4      19
-    ## 2     2        8      10
-    ## 3     3        5       8
-    ## 4     4       10      11
-    ## 5     5        2      19
-    ## 6     6        6      18
+    ##   id_retka kontrola gnojivo
+    ##      <int>    <int>   <int>
+    ## 1        1        4      19
+    ## 2        2        8      10
+    ## 3        3        5       8
+    ## 4        4       10      11
+    ## 5        5        2      19
+    ## 6        6        6      18
 
 ``` r
 # Wilcoxon-Mann-Whitney test za neovisne uzorke
@@ -179,9 +191,30 @@ head(biljke_pokus2)
 
 ## Vizualizacija pomoću boxplota
 
+``` r
+# Vizualizacija podataka iz pokusa 2
+# Kreiranje tablice u dugačkom (long) formatu - za crtanje plotova
+biljke_pokus2$id_biljke <- c(1:19)
+
+biljke_pokus2_long <- pivot_longer(biljke_pokus2, 
+                                   cols = c(prije_gnojiva, poslije_gnojiva), 
+                                   names_to = "tretman", 
+                                   values_to = "proklijalo")
+
+# Vizualizacija podataka iz pokusa 1
+ggplot(biljke_pokus2_long, aes(x = tretman, y = proklijalo, fill = tretman)) +
+  geom_boxplot() + geom_point() + geom_line(aes(group = id_biljke), alpha = 0.5)
+```
+
 ![](README_files/figure-gfm/boxplot_pokus2-1.png)<!-- -->
 
 ## Vizualizacija distribucije podataka
+
+``` r
+# Histogrami
+ggplot(biljke_pokus2_long, aes(x = proklijalo, fill = tretman)) +
+  geom_histogram(binwidth = 3, color = "black") + facet_wrap (~ tretman, nrow = 2)
+```
 
 ![](README_files/figure-gfm/hist_pokus2-1.png)<!-- -->
 
@@ -244,8 +277,7 @@ print(biljke_pokus3)
 # Vizualizacija podataka
 ggplot(biljke_pokus3, aes(x = gnojiva, y = proklijano)) +
   geom_bar(stat = "identity", position = "dodge") +
-  geom_hline(aes(yintercept = ocekivano), color = "red", linetype = "dashed") +
-  theme_minimal()
+  geom_hline(aes(yintercept = ocekivano), color = "red", linetype = "dashed")
 ```
 
 ![](README_files/figure-gfm/ggplot-1.png)<!-- -->
@@ -393,9 +425,3 @@ binom.test(biljke_pokus4$klijanci, biljke_pokus4$broj_sjemenki, p = biljke_pokus
 - Od 15 miševa pod određenom prehranom, njih 10 je pokazalo poboljšanje
   težine.
 - Je li postotak poboljšanja značajno različit od očekivanih 50%?
-
-## Dodatni izvori
-
-- Long vs. Wide Table Format: https://www.statology.org/long-vs-wide-data/
-- Wilcoxon test za uparene uzorke - interpretacija testne statistike: https://numiqo.com/tutorial/wilcoxon-test/
-
